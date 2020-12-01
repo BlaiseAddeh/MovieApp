@@ -1,0 +1,5 @@
+﻿
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install-Package Microsoft.EntityFrameworkCore.Design
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Scaffold-DbContext "Server=.;Initial catalog=MovieDB; Trusted_Connection=True" Microsoft.EntityFrameworkCore.Sqlserver -OutputDir Models

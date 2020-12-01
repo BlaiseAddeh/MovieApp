@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "MoviesDetailView";
+}
+
+<h1>List of Movies</h1>
+
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Release Date</th>
+            <th>Director</th>
+            <th>Rating</th>
+        </tr>
+        @foreach (var movie in @Model.Movies)
+        {
+    <tr>
+        <td>@movie.Title</td>
+        <td>@movie.Genre.Name</td>
+        <td>@movie.ReleaseDate</td>
+        <td>@string.Format("{0} {1}",@movie.Director.FirstName, @movie.Director.LastName)</td>
+        <td>
+            @for (int i = 0; i < movie.Rating; i++) { 
+            <span class="glyphicon glyphicon-star-empty"></span>
+            }
+        </td>
+    </tr>
+        }
+    </table>
+</div>
+
